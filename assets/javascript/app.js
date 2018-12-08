@@ -42,7 +42,7 @@ var populateButtons = function() {
 $(document).on("click", ".show-buttons", function(){
 
     var show = $(this).attr("search-string");
-    var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + show + "&limit=10&api_key=Yg5eKPk0cwb3zCoKHCD0WHAn55yzVODc";
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + show + "&limit=10&api_key=Yg5eKPk0cwb3zCoKHCD0WHAn55yzVODc";
 
     $.ajax({
       url: queryURL,
