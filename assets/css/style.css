@@ -28,11 +28,22 @@ body {
 #results {
     margin: 10px 0 0 10px;
     flex: 1;
-    width: 80%;
+}
+
+.images {
+    display: inline;
+    position: relative;
 }
 
 .gifs {
-    margin: 10px 10px 0 0;
+    margin: 20px 10px 20px 0;
+}
+
+.ratings {
+    display: inline;
+    position: absolute;
+    bottom: 0;
+    left: 0;
 }
 
 #add-shows {
@@ -63,7 +74,7 @@ label, input {
 
 /* Specific styling for smaller screens */
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 768px) {
 
     #main-container {
         clear: both;
@@ -73,6 +84,14 @@ label, input {
     #results {
         width: 100%;
         clear: both;
+    }
+
+}
+
+@media screen and (max-width: 640px) {
+
+    .gifs {
+        max-width: 90%;
     }
 
 }

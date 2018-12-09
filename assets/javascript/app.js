@@ -4,7 +4,7 @@ $(document).ready(function() {
 // ==================================================
 
 // Setting up the array of shows
-var topics = ["How I Met Your Mother", "Friends", "Seinfeld", "The Big Bang Theory", "Silicon Valley", "The Simpsons", "Once Upon A Time", "Black Mirror", "The Handmaid's Tale"];
+var topics = ["How I Met Your Mother", "Friends", "Seinfeld", "The Big Bang Theory", "Silicon Valley", "The Simpsons", "The Office", "Black Mirror", "The Handmaid's Tale"];
 var convertedTopics = [];
 
 
@@ -50,7 +50,7 @@ $(document).on("click", ".show-buttons", function(){
     }).then(function(response) {
         $("#results").empty();
         for (var i = 0; i < 10; i++){
-            $("#results").append("<span><img src='" + response.data[i].images.fixed_height_still.url + "' class='gifs' state='still' still-url='" + response.data[i].images.fixed_height_still.url + "' animated-url='" + response.data[i].images.fixed_height.url + "'></span>");
+            $("#results").append("<div class='images'><img src='" + response.data[i].images.fixed_height_still.url + "' class='gifs' state='still' still-url='" + response.data[i].images.fixed_height_still.url + "' animated-url='" + response.data[i].images.fixed_height.url + "'><p class='ratings'>Rating: " + response.data[i].rating + "</p></span>");
         }
     });
 
