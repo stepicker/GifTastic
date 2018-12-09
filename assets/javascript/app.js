@@ -50,13 +50,26 @@ $(document).on("click", ".show-buttons", function(){
     }).then(function(response) {
         $("#results").empty();
         for (var i = 0; i < 10; i++){
-            $("#results").append("<span><img src='" + response.data[i].images.fixed_height_still.url + "'></span>");
+            $("#results").append("<span><img src='" + response.data[i].images.fixed_height_still.url + "' class='gifs' state='still' still-url='" + response.data[i].images.fixed_height_still.url + "' animated-url='" + response.data[i].images.fixed_height.url + "'></span>");
         }
     });
 
 });
 
-// Add elements to the array, based on user input
+
+// Toggle the GIF status (still / animated)
+$(document).on("click", ".gifs", function(){
+    if ($(this).attr("state") === "still") {
+        $(this).attr("src", $(this).attr("animated-url"));
+        $(this).attr("state", "animated")
+    }
+    else {
+        $(this).attr("src", $(this).attr("still-url"));
+        $(this).attr("state", "still")
+    };
+});
+
+// Add new shows to the array, based on user input
 $("#add-show").on("click", function(event) {
     event.preventDefault();
     var show = $("#show-input").val().trim();
