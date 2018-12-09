@@ -7,7 +7,7 @@ It leverages the Giphy API, while using a mix of vanilla Javascript for the logi
 
 ## How it works
 
-- A number of buttons contain the names of popular movies and TW shows.
+- A number of buttons contain the names of popular movies and TV shows.
 
 - A click on a button shows animated GIFs related to the corresponding show.
 
